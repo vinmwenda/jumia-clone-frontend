@@ -1,0 +1,37 @@
+.headerText {
+  text-align: center;
+  color: orange;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+.accountInputContainer {
+  background-color: rgb(234, 245, 245);
+  height: fit-content;
+  border-bottom: 1px solid grey;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 10px 7px 15px grey;
+}
+.accountInput {
+  border: none;
+  background-color: rgb(234, 245, 245);
+  outline: none;
+  width: 100%;
+  flex: 1;
+
+  font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif, sans-serif;
+}
+.inputLabel {
+  font-size: 14px;
+  color: rgb(99, 98, 98);
+}
+.accountContainer {
+  width: 80%;
+  margin: auto;
+}
+.accountBtn {
+  border-radius: 5px;
+  cursor: pointer;
+}
