@@ -3,10 +3,12 @@ import React, { useEffect } from "react";
 import ProductsContainer from "./ProductsContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../store/actions";
+import { useState } from "react";
 
 const RenderProducts = () => {
   const dispatch = useDispatch();
-  let products = useSelector((state) => state.products.list);
+  let products = {};
+  products = useSelector((state) => state.products.list);
 
   useEffect(() => {
     dispatch(getProducts());

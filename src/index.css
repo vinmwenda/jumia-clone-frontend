@@ -143,3 +143,16 @@ a {
 .bgc {
   background-color: rgba(252, 246, 246, 0.945);
 }
+.checkoutBtn {
+  background-color: orange;
+  color: #ffffff;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.checkoutBtn:hover {
+  cursor: pointer;
+  transform: scale(1.02) !important;
+  cursor: pointer !important;
+}
