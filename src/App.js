@@ -22,7 +22,7 @@ function App() {
   let params = useParams();
   useEffect(() => {
     dispatch(getCartDetails());
-  });
+  }, []);
   //saveState(useSelector((state) => (state = state.products.details)));
   return (
     <>

@@ -6,7 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 import { useDispatch } from "react-redux";
 import axios from "axios";
-const ProductInfo = ({ data }) => {
+function ProductInfo({ data }) {
   const { title, category, price } = data;
   const [isClicked, setIsclicked] = useState(false);
   const dispatch = useDispatch();
@@ -75,6 +75,6 @@ const ProductInfo = ({ data }) => {
       )}
     </>
   );
-};
+}
 
 export default ProductInfo;
