@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import HomeScreen from "./Components/Screens/HomeScreen";
 
@@ -15,12 +15,14 @@ import ProductDetailsContainer from "./Components/Screens/ProductDetailsContaine
 
 import FormInput from "./Components/Screens/FormInput";
 import Cart from "./Components/Screens/Cart";
-
+import { getCartDetails } from "../../store/actions";
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
   let params = useParams();
-
+  useEffect(() => {
+    dispatch(getCartDetails());
+  }, []);
   //saveState(useSelector((state) => (state = state.products.details)));
   return (
     <>
