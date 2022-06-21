@@ -21,6 +21,7 @@ export const getLocations = () => {
 };
 
 export const getCartDetails = () => {
+  console.log("clll");
   return {
     type: "getCart",
     payload: {
