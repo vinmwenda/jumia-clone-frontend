@@ -20,7 +20,7 @@ const ProductInfo = ({ data }) => {
       info
     );
     console.log(response.data, "data");
-
+    dispatch(getCartDetails());
     //dispatch(getCartDetails(info));
   };
   let count = 0;
