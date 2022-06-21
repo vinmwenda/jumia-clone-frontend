@@ -4,7 +4,7 @@ import ProductsContainer from "./ProductsContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../store/actions";
 import { useState } from "react";
-
+import { getCartDetails } from "../../store/actions";
 const RenderProducts = () => {
   const dispatch = useDispatch();
   let products = {};
@@ -12,6 +12,7 @@ const RenderProducts = () => {
 
   useEffect(() => {
     dispatch(getProducts());
+    dispatch(getCartDetails());
   }, []);
 
   let electronics = products.filter(

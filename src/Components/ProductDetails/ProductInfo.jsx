@@ -3,27 +3,32 @@ import React, { useEffect, useState } from "react";
 import AddShoppingCart from "@mui/icons-material/AddShoppingCart";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import { getCartDetails } from "../../store/actions";
-import { useDispatch } from "react-redux";
 
+import { useDispatch } from "react-redux";
+import axios from "axios";
 const ProductInfo = ({ data }) => {
   const { title, category, price } = data;
   const [isClicked, setIsclicked] = useState(false);
   const dispatch = useDispatch();
 
   let cart = {};
-  const handleCart = (info) => {
+  const handleCart = async (info) => {
     cart = { ...info };
     setIsclicked(true);
+    const response = await axios.post(
+      "https://jumiaclone.herokuapp.com/api/cart",
+      info
+    );
+    console.log(response.data, "data");
 
-    dispatch(getCartDetails(cart));
+    //dispatch(getCartDetails(info));
   };
   let count = 0;
   const addCart = () => {
-    const p = { ...data };
-    count = count + 1;
-    p.quantity = count;
-    dispatch(getCartDetails(p));
+    // const p = { ...data };
+    // count = count + 1;
+    // p.quantity = count;
+    // dispatch(getCartDetails(p));
   };
   console.log(data);
   useEffect(() => {

@@ -6,19 +6,15 @@ let data = loadState("cart") || [];
 const slice = createSlice({
   name: "cart",
   initialState: {
-    cartDetails: [...data],
-    finalState: [],
+    list: [],
   },
 
   reducers: {
-    cartDetails: (state, action) => {
-      cartdata.push(action.payload);
-      saveState("cart", cartdata);
-
-      state.cartDetails = [...loadState("cart")];
+    apiCallSuccessiful: (state, action) => {
+      state.list = [...action.payload];
     },
   },
 });
 
-export const { cartDetails } = slice.actions;
+export const { apiCallSuccessiful } = slice.actions;
 export default slice.reducer;

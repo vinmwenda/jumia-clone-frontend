@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/esm/Container";
 import Col from "react-bootstrap/esm/Col";
 import Joi from "joi-browser";
 import { formField } from "../../static/data/data";
-
+import { getUserInfo } from "../../store/actions";
+import { useDispatch, useSelector } from "react-redux";
 const FormInput = () => {
+  const dispatch = useDispatch();
   const [data, setData] = useState({
     First_name: "",
     Last_name: "",
@@ -15,6 +17,7 @@ const FormInput = () => {
     Password: "",
     Confirm_Password: "",
   });
+  useEffect(() => {}, []);
   const [errors, setErrors] = useState();
   const account = {};
   console.log(errors);
@@ -62,6 +65,7 @@ const FormInput = () => {
     console.log();
 
     setErrors(validate());
+    dispatch(getUserInfo(data));
   };
 
   console.log(data);

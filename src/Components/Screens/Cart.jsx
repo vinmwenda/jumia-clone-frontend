@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import jexpress from "../../static/images/jexpress.png";
 
 const Cart = () => {
-  const item = useSelector((state) => state.cart.cartDetails) || [];
+  const item = useSelector((state) => state.cart.list) || [];
   const count = [];
 
   console.log(count);

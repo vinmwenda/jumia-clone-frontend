@@ -17,8 +17,8 @@ import { loadState } from "../../browserData";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  let [count, setCount] = useState(loadState("cart"));
-  let newCount = useSelector((state) => state.cart.cartDetails);
+  let [count, setCount] = useState();
+  let newCount = useSelector((state) => state.cart.list);
   count = newCount.length === 0 ? count : newCount;
   let func = () => {
     setCount(count);

@@ -20,9 +20,24 @@ export const getLocations = () => {
   };
 };
 
-export const getCartDetails = (data) => {
+export const getCartDetails = () => {
   return {
-    type: "cart/cartDetails",
-    payload: data,
+    type: "getCart",
+    payload: {
+      url: "/api/cart",
+      onSuccess: "cart/apiCallSuccessiful",
+      onError: "apiCallFailed",
+    },
+  };
+};
+export const getUserInfo = (data) => {
+  return {
+    type: "getUser",
+    payload: {
+      url: "/api/users",
+      onSuccess: "user/userInformation",
+      onError: "apiCallFailed",
+      data,
+    },
   };
 };
