@@ -19,7 +19,7 @@ const ProductInfo = ({ data }) => {
       "https://jumiaclone.herokuapp.com/api/cart",
       info
     );
-    Location.reload();
+    Location.reload(true);
     console.log(response.data, "data");
     dispatch(getCartDetails());
     //dispatch(getCartDetails(info));
