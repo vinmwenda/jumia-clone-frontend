@@ -131,6 +131,7 @@ const FormInput = () => {
               variant="success"
               size="sm"
               type="submit"
+              disabled={validate()}
             >
               Submit
             </Button>
