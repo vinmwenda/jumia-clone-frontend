@@ -76,7 +76,7 @@ export const userApi =
     const { url, method, data, onSuccess, onError } = action.payload;
 
     try {
-      const response = await axios.post({
+      const response = await axios.request({
         baseURL: cloudURL,
         url,
         method,

@@ -3,6 +3,7 @@ import { saveState } from "../browserData";
 import { loadState } from "../browserData";
 let cartdata = [];
 let data = loadState("cart") || [];
+
 const slice = createSlice({
   name: "cart",
   initialState: {

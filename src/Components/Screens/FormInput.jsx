@@ -7,6 +7,7 @@ import Joi from "joi-browser";
 import { formField } from "../../static/data/data";
 import { getUserInfo } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 const FormInput = () => {
   const dispatch = useDispatch();
   const [data, setData] = useState({
@@ -60,12 +61,18 @@ const FormInput = () => {
     console.log(errors);
     if (errors) return errors;
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log();
 
     setErrors(validate());
     dispatch(getUserInfo(data));
+    const response = await axios.post(
+      "https://jumiaclone.herokuapp.com/api/users",
+      data
+    );
+
+    console.log(response.data, "data");
   };
 
   console.log(data);

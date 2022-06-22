@@ -12,13 +12,15 @@ import {
 } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import ProductDetailsContainer from "./Components/Screens/ProductDetailsContainer";
-
+import { useDispatch } from "react-redux";
 import FormInput from "./Components/Screens/FormInput";
 import Cart from "./Components/Screens/Cart";
-import { getCartDetails } from "../../store/actions";
+import { getCartDetails } from "./store/actions";
+
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   let params = useParams();
   useEffect(() => {
     dispatch(getCartDetails());

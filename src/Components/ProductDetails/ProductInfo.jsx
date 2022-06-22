@@ -6,6 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import { getCartDetails } from "../../store/actions";
 function ProductInfo({ data }) {
   const { title, category, price } = data;
   const [isClicked, setIsclicked] = useState(false);
@@ -19,7 +20,7 @@ function ProductInfo({ data }) {
       "https://jumiaclone.herokuapp.com/api/cart",
       info
     );
-    Location.reload(true);
+
     console.log(response.data, "data");
     dispatch(getCartDetails());
     //dispatch(getCartDetails(info));
