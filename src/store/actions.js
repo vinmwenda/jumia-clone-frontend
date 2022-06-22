@@ -31,14 +31,13 @@ export const getCartDetails = () => {
     },
   };
 };
-export const getUserInfo = (data) => {
+export const getUserInfo = () => {
   return {
     type: "getUser",
     payload: {
       url: "/api/users",
       onSuccess: "user/userInformation",
       onError: "apiCallFailed",
-      data,
     },
   };
 };

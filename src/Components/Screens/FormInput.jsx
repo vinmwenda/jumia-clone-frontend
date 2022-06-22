@@ -66,7 +66,7 @@ const FormInput = () => {
     console.log();
 
     setErrors(validate());
-    dispatch(getUserInfo(data));
+    dispatch(getUserInfo());
     await axios.post("https://jumiaclone.herokuapp.com/api/users", data);
   };
 
